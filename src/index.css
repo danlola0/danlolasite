@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply font-sans text-gray-700 antialiased;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2563eb;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #1d4ed8;
+}
+
+/* Add smooth transitions */
+a, 
+button {
+  @apply transition-all duration-300;
+}
+
+/* Prevent FOUC (Flash of Unstyled Content) */
+html:not(.no-js) .hidden-if-no-js {
+  @apply opacity-0;
+}
+
+html:not(.no-js) .hidden-if-no-js.loaded {
+  @apply opacity-100 transition-opacity duration-300;
+}
+
+/* Additional utility classes */
+.container {
+  @apply max-w-7xl mx-auto;
+}
+
+/* Section styles */
+section {
+  @apply py-16 md:py-24;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply font-bold text-gray-800 leading-tight;
+}
+
+/* Import animation styles */
+@import './styles/animations.css';
